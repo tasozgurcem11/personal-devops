@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from functions import create_project_directory, create_readme_file, query_yes_no
 from git_commands import create_github_repository, add_gitignore_file, git_push, git_init
 from credentials import *
@@ -39,7 +40,7 @@ if __name__ == "__main__":
 
     create_project_directory(project_name, PROJECTS_PATH)
     create_readme_file(project_name, PROJECTS_PATH, project_description)
-    add_gitignore_file(project_name, PROJECTS_PATH)
+    add_gitignore_file(project_name, PROJECTS_PATH, INTERNAL_DEVOPS_PATH)
 
     if git:
         git_command = create_github_repository(GITHUB_API_TOKEN, args.name, args.description, private=args.private)
