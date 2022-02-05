@@ -1,4 +1,4 @@
-## Devops for project creation shortcut
+## Devops for personal project creation shortcut
 
 ### Sample credentials.py file:
 
