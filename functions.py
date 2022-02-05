@@ -20,7 +20,8 @@ def execute(cmd):
 
 
 def set_label(filename, color_name):
-    colors = ['none', 'gray', 'green', 'purple', 'blue', 'yellow', 'red', 'orange']
+    # Enter your label names if you are using Mac OS
+    colors = ['none', 'gray', 'green', 'purple', 'blue', 'yellow', 'red', 'orange', 'projects']
     key = u'com.apple.FinderInfo'
     attrs = xattr(filename)
     current = attrs.copy().get(key, chr(0)*32)
@@ -41,7 +42,8 @@ def create_project_directory(project_name, project_path):
     os.chdir(project_path)
     os.mkdir(project_name)
     # set_label(os.path.join(project_path, project_name), 'orange')
-    mac_tag.add(['Orange'], [os.path.join(project_path, project_name)])
+    project_label_name = 'projects'
+    mac_tag.add([project_label_name], [os.path.join(project_path, project_name)])
     os.chdir(current_path)
 
 
